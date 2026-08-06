@@ -22,15 +22,15 @@
 <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yourwebsite.com/">
-<meta property="og:title" content="Happy Birthday! 🎉">
-<meta property="og:description" content="A special birthday surprise page made with love 💖">
+<meta property="og:title" content="Happy Birthday! 🎂">
+<meta property="og:description" content="A special birthday surprise page made with love ✨">
 <meta property="og:image" content="https://files.catbox.moe/ry9kyx.jpeg">
 
-<!-- Twitter Card (X icon preview 😏) -->
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://yourwebsite.com/">
-<meta name="twitter:title" content="Happy Birthday! 🎉">
-<meta name="twitter:description" content="A special birthday surprise page made with love 💖">
+<meta name="twitter:title" content="Happy Birthday! 🎂">
+<meta name="twitter:description" content="A special birthday surprise page made with love ✨">
 <meta name="twitter:image" content="https://files.catbox.moe/ry9kyx.jpeg">
 
 <!-- Canonical URL -->
@@ -70,15 +70,9 @@
   </div>
 </button>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
-  <img id="lightbox-img" src="" alt="Photo">
-</div>
-
 <main>
-  <!-- 0: HERO -->
+  <!-- 0: HERO (Welcome) -->
   <div class="page-section hero visible" data-section="Welcome">
-    <img class="hero-photo" src="https://nekos.best/api/v2/neko/205c4489-44db-40e8-9039-ed2ed1e63e02.png" alt="Birthday Person">
     <div class="hero-badge"><i data-lucide="sparkles"></i> It's a Special Day!</div>
     <h1>Happy Birthday<br>Sarah!</h1>
     <p class="hero-sub">Wishing you the most magical day <i data-lucide="star"></i></p>
@@ -100,46 +94,11 @@
     </div>
     <div class="section-nav">
       <button class="nav-btn" onclick="goToSection(0)"><i data-lucide="chevron-left"></i> Back</button>
-      <button class="nav-btn" onclick="goToSection(2)">Next Photos <i data-lucide="chevron-right"></i></button>
+      <button class="nav-btn" onclick="goToSection(2)">Next Cake <i data-lucide="chevron-right"></i></button>
     </div>
   </div>
 
-  <!-- 2: PHOTOS -->
-  <div class="page-section" data-section="Photos" id="sec-photos">
-    <h2 class="section-title"><span class="title-icon"><i data-lucide="camera"></i></span>Cherished Moments</h2>
-    <div class="gallery">
-      <div class="gallery-item" onclick="openLightbox(this)">
-        <img loading="lazy" src="https://nekos.best/api/v2/neko/54de831b-913d-4793-8514-204961f0fbb8.png" alt="Memory 1">
-        <div class="gallery-overlay"><span><i data-lucide="smile"></i> Beautiful Smile</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(this)">
-        <img loading="lazy" src="https://nekos.best/api/v2/neko/7bc1d503-7c4d-42b7-9473-26361fcb9b36.png" alt="Memory 2">
-        <div class="gallery-overlay"><span><i data-lucide="sun"></i> Golden Hour</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(this)">
-        <img loading="lazy" src="https://nekos.best/api/v2/neko/e4dc1604-e4b9-43ef-a8d1-25dea3e4a6df.png" alt="Memory 3">
-        <div class="gallery-overlay"><span><i data-lucide="laugh"></i> Pure Joy</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(this)">
-        <img loading="lazy" src="https://nekos.best/api/v2/neko/5cbce1b3-012a-4132-b23e-f393ffdbf523.png" alt="Memory 4">
-        <div class="gallery-overlay"><span><i data-lucide="star"></i> Best Day Ever</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(this)">
-        <img loading="lazy" src="https://nekos.best/api/v2/neko/61b09c2e-0a10-4ad5-9dc3-091e7e161b62.png" alt="Memory 5">
-        <div class="gallery-overlay"><span><i data-lucide="sparkles"></i> Always Shining</span></div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(this)">
-        <img loading="lazy" src="https://nekos.best/api/v2/neko/613d96c5-05e2-4e94-9f40-20bc1bfe094f.png" alt="Memory 6">
-        <div class="gallery-overlay"><span><i data-lucide="heart"></i> Forever Young</span></div>
-      </div>
-    </div>
-    <div class="section-nav">
-      <button class="nav-btn" onclick="goToSection(1)"><i data-lucide="chevron-left"></i> Back</button>
-      <button class="nav-btn" onclick="goToSection(3)">Next Cake <i data-lucide="chevron-right"></i></button>
-    </div>
-  </div>
-
-  <!-- 3: CAKE -->
+  <!-- 2: CAKE -->
   <div class="page-section" data-section="Cake" id="sec-cake">
     <h2 class="section-title"><span class="title-icon"><i data-lucide="cake"></i></span>Make a Wish!</h2>
     <div class="cake-section">
@@ -151,29 +110,12 @@
       <button class="blow-btn" onclick="blowCandles()"><i data-lucide="wind"></i> Blow the Candles!</button>
     </div>
     <div class="section-nav">
-      <button class="nav-btn" onclick="goToSection(2)"><i data-lucide="chevron-left"></i> Back</button>
-      <button class="nav-btn" onclick="goToSection(4)">Next Wishes <i data-lucide="chevron-right"></i></button>
+      <button class="nav-btn" onclick="goToSection(1)"><i data-lucide="chevron-left"></i> Back</button>
+      <button class="nav-btn" onclick="goToSection(3)">Next Celebrate <i data-lucide="chevron-right"></i></button>
     </div>
   </div>
 
-  <!-- 4: WISHES -->
-  <div class="page-section" data-section="Wishes" id="sec-wishes">
-    <h2 class="section-title"><span class="title-icon"><i data-lucide="gift"></i></span>Birthday Wishes</h2>
-    <div class="wishes-grid">
-      <div class="wish-card"><div class="wish-icon"><i data-lucide="sun"></i></div><p class="wish-text">May your life be as colorful and vibrant as a rainbow after the rain.</p></div>
-      <div class="wish-card"><div class="wish-icon"><i data-lucide="trophy"></i></div><p class="wish-text">Wishing you success in everything you touch this year and always.</p></div>
-      <div class="wish-card"><div class="wish-icon"><i data-lucide="feather"></i></div><p class="wish-text">May you spread your wings and soar to new heights this birthday!</p></div>
-      <div class="wish-card"><div class="wish-icon"><i data-lucide="flower-2"></i></div><p class="wish-text">Like a sunflower, may you always turn towards the light and grow.</p></div>
-      <div class="wish-card"><div class="wish-icon"><i data-lucide="laugh"></i></div><p class="wish-text">Here's to more laughter, more adventures, and more beautiful moments!</p></div>
-      <div class="wish-card"><div class="wish-icon"><i data-lucide="heart"></i></div><p class="wish-text">Luck, love, and happiness — may they follow you everywhere you go.</p></div>
-    </div>
-    <div class="section-nav">
-      <button class="nav-btn" onclick="goToSection(3)"><i data-lucide="chevron-left"></i> Back</button>
-      <button class="nav-btn" onclick="goToSection(5)">Next Celebrate <i data-lucide="chevron-right"></i></button>
-    </div>
-  </div>
-
-  <!-- 5: GIF CELEBRATION -->
+  <!-- 3: GIF CELEBRATION -->
   <div class="page-section" data-section="Celebrate" id="sec-gifs">
     <h2 class="section-title"><span class="title-icon"><i data-lucide="party-popper"></i></span>Celebration Vibes</h2>
     <div class="gif-grid">
@@ -188,7 +130,7 @@
       </div>
     </div>
     <div class="section-nav" style="margin-top:2rem">
-      <button class="nav-btn" onclick="goToSection(4)"><i data-lucide="chevron-left"></i> Back</button>
+      <button class="nav-btn" onclick="goToSection(2)"><i data-lucide="chevron-left"></i> Back</button>
     </div>
   </div>
 
