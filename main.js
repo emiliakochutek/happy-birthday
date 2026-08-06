@@ -52,13 +52,13 @@ allSections.forEach(s => sectionObserver.observe(s));
 
 // AUTO SCROLL
 function startAutoScroll() {
-  autoScrollTimer = setInterval(() => {
-    if (currentSection < allSections.length - 1) {
-      goToSection(currentSection + 1);
-    } else {
-      clearInterval(autoScrollTimer);
-    }
-  }, AUTO_SCROLL_DELAY);
+  // autoScrollTimer = setInterval(() => {
+  //   if (currentSection < allSections.length - 1) {
+  //     goToSection(currentSection + 1);
+  //   } else {
+  //     clearInterval(autoScrollTimer);
+  //   }
+  // }, AUTO_SCROLL_DELAY);
 }
 
 function resetAutoScroll() {
@@ -115,6 +115,17 @@ musicBtn.addEventListener('click', () => {
   else { bgMusic.play().catch(()=>{}); musicBtn.classList.add('playing'); }
   musicPlaying = !musicPlaying;
 });
+
+// AUTO ODTWARZANIE PRZY PIERWSZEJ INTERAKCJI
+document.body.addEventListener('click', function startMusicOnFirstClick() {
+  if (!musicPlaying) {
+    bgMusic.play().catch(()=>{});
+    musicBtn.classList.add('playing');
+    musicPlaying = true;
+  }
+  // Usuwamy nasłuchiwanie, by muzyka nie włączała się ponownie przy każdym kolejnym kliknięciu
+  document.body.removeEventListener('click', startMusicOnFirstClick);
+}, { once: true });
 
 // CONFETTI
 function triggerConfetti(count = 60) {
