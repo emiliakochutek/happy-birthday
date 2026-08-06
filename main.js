@@ -108,23 +108,38 @@ function openLightbox(el) {
 // MUSIC
 const musicBtn = document.getElementById('musicBtn');
 const bgMusic = document.getElementById('bgMusic');
-bgMusic.volume = 0.3;
+bgMusic.volume = 0.4;
 let musicPlaying = false;
-musicBtn.addEventListener('click', () => {
-  if (musicPlaying) { bgMusic.pause(); musicBtn.classList.remove('playing'); }
-  else { bgMusic.play().catch(()=>{}); musicBtn.classList.add('playing'); }
-  musicPlaying = !musicPlaying;
+
+function playAudio() {
+  bgMusic.play().then(() => {
+    musicPlaying = true;
+    musicBtn.classList.add('playing');
+  }).catch(err => {
+    console.log("Błąd odtwarzania:", err);
+  });
+}
+
+function toggleAudio() {
+  if (musicPlaying) {
+    bgMusic.pause();
+    musicBtn.classList.remove('playing');
+    musicPlaying = false;
+  } else {
+    playAudio();
+  }
+}
+
+musicBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleAudio();
 });
 
-// AUTO ODTWARZANIE PRZY PIERWSZEJ INTERAKCJI
-document.body.addEventListener('click', function startMusicOnFirstClick() {
+// Włączenie muzyki przy pierwszym kliknięciu w dowolne miejsce strony
+document.addEventListener('click', function startOnFirstClick() {
   if (!musicPlaying) {
-    bgMusic.play().catch(()=>{});
-    musicBtn.classList.add('playing');
-    musicPlaying = true;
+    playAudio();
   }
-  // Usuwamy nasłuchiwanie, by muzyka nie włączała się ponownie przy każdym kolejnym kliknięciu
-  document.body.removeEventListener('click', startMusicOnFirstClick);
 }, { once: true });
 
 // CONFETTI
